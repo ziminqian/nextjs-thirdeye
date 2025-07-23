@@ -1,77 +1,117 @@
-"use client";
+// 📁 /src/app/page.tsx
+import React from "react";
+import Link from "next/link";
 
-import { useState } from "react";
-
-export default function PostPage() {
-  const [entry, setEntry] = useState("");
-  const [isAnonymous, setIsAnonymous] = useState(true);
-  const [file, setFile] = useState<File | null>(null);
-
+export default function HomePage() {
   return (
-    <main className="min-h-screen bg-gradient-to-b from-[#fdfcfb] to-[#e2d1c3] px-4 py-10 flex justify-center items-start font-serif">
-      <div className="bg-white rounded-2xl shadow-xl p-8 w-full max-w-2xl space-y-6 border border-gray-200">
-        <h1 className="text-4xl font-bold text-gray-800 flex items-center gap-2">
-          🧘‍♀️ Wellness Journal
-        </h1>
-        <p className="text-gray-600 leading-relaxed">
-          Reflect on your wellness journey 🌿 — how you're feeling, your rituals, or simply a photo that captures your moment. Share it with intention, or anonymously if you prefer.
-        </p>
+    <main className="min-h-screen bg-gray-50 text-gray-800 p-6">
+      <h1 className="text-3xl font-bold mb-4">Welcome to Quotely 🌱</h1>
+      <p className="mb-6 text-lg">A safe space to reflect, share quotes, and support each other through literature and wellness.</p>
 
-        <div className="space-y-2">
-          <label className="text-gray-700 font-medium">Your Journal Entry</label>
-          <textarea
-            rows={6}
-            className="w-full border border-gray-300 rounded-xl p-4 focus:outline-none focus:ring-2 focus:ring-indigo-300 shadow-sm resize-none bg-gray-50"
-            placeholder="Write your thoughts here..."
-            value={entry}
-            onChange={(e) => setEntry(e.target.value)}
-          />
-        </div>
+      <div className="grid gap-4 md:grid-cols-2">
+        <Link href="/post" className="block p-6 bg-white rounded shadow hover:shadow-lg transition">
+          <h2 className="text-xl font-semibold">📝 Post a Journal Entry</h2>
+          <p className="text-sm text-gray-600">Share how you're feeling—anonymously or not.</p>
+        </Link>
 
-        <div className="space-y-2">
-          <label className="text-gray-700 font-medium">Upload a wellness photo (optional)</label>
-          <input
-            type="file"
-            accept="image/*"
-            onChange={(e) => {
-              if (e.target.files && e.target.files[0]) {
-                setFile(e.target.files[0]);
-              }
-            }}
-            className="block w-full text-sm text-gray-600 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-medium file:bg-indigo-100 file:text-indigo-700 hover:file:bg-indigo-200 cursor-pointer"
-          />
-        </div>
+        <Link href="/explore" className="block p-6 bg-white rounded shadow hover:shadow-lg transition">
+          <h2 className="text-xl font-semibold">📚 Explore Quotes</h2>
+          <p className="text-sm text-gray-600">Discover and send uplifting quotes to your friends.</p>
+        </Link>
 
-        {file && (
-          <div className="space-y-2">
-            <p className="font-medium text-gray-700">Photo Preview:</p>
-            <img
-              src={URL.createObjectURL(file)}
-              alt="Preview"
-              className="w-full max-h-80 object-contain border rounded-xl shadow-md"
-            />
-          </div>
-        )}
+        <Link href="/inbox" className="block p-6 bg-white rounded shadow hover:shadow-lg transition">
+          <h2 className="text-xl font-semibold">💌 View Your Inbox</h2>
+          <p className="text-sm text-gray-600">See what your friends have sent you.</p>
+        </Link>
 
-        <div className="flex items-center gap-2">
-          <input
-            type="checkbox"
-            checked={isAnonymous}
-            onChange={(e) => setIsAnonymous(e.target.checked)}
-            className="h-5 w-5 accent-indigo-500 rounded focus:ring-2 focus:ring-indigo-400"
-          />
-          <label className="text-gray-700">Post anonymously</label>
-        </div>
+        <Link href="/therapist" className="block p-6 bg-white rounded shadow hover:shadow-lg transition">
+          <h2 className="text-xl font-semibold">🧠 Therapist Mode</h2>
+          <p className="text-sm text-gray-600">Get quote-based support for what you're going through.</p>
+        </Link>
 
-        <div className="pt-4">
-          <button
-            onClick={() => alert("Submitted! (You can replace this with actual logic)")}
-            className="w-full bg-indigo-500 hover:bg-indigo-600 text-white text-lg font-semibold py-3 rounded-xl transition-all duration-200 shadow-md hover:shadow-lg"
-          >
-            ✨ Submit Entry
-          </button>
-        </div>
+        <Link href="/wellness" className="block p-6 bg-white rounded shadow hover:shadow-lg transition">
+          <h2 className="text-xl font-semibold">📷 Share Wellness Check-In</h2>
+          <p className="text-sm text-gray-600">Post what you did for self-care today.</p>
+        </Link>
       </div>
     </main>
   );
 }
+
+// "use client";
+
+// import { useState } from "react";
+
+// export default function PostPage() {
+//   const [entry, setEntry] = useState("");
+//   const [isAnonymous, setIsAnonymous] = useState(true);
+//   const [file, setFile] = useState<File | null>(null);
+
+//   return (
+//     <main className="min-h-screen bg-gradient-to-b from-[#fdfcfb] to-[#e2d1c3] px-4 py-10 flex justify-center items-start font-serif">
+//       <div className="bg-white rounded-2xl shadow-xl p-8 w-full max-w-2xl space-y-6 border border-gray-200">
+//         <h1 className="text-4xl font-bold text-gray-800 flex items-center gap-2">
+//           🧘‍♀️ Wellness Journal
+//         </h1>
+//         <p className="text-gray-600 leading-relaxed">
+//           Reflect on your wellness journey 🌿 — how you're feeling, your rituals, or simply a photo that captures your moment. Share it with intention, or anonymously if you prefer.
+//         </p>
+
+//         <div className="space-y-2">
+//           <label className="text-gray-700 font-medium">Your Journal Entry</label>
+//           <textarea
+//             rows={6}
+//             className="w-full border border-gray-300 rounded-xl p-4 focus:outline-none focus:ring-2 focus:ring-indigo-300 shadow-sm resize-none bg-gray-50"
+//             placeholder="Write your thoughts here..."
+//             value={entry}
+//             onChange={(e) => setEntry(e.target.value)}
+//           />
+//         </div>
+
+//         <div className="space-y-2">
+//           <label className="text-gray-700 font-medium">Upload a wellness photo (optional)</label>
+//           <input
+//             type="file"
+//             accept="image/*"
+//             onChange={(e) => {
+//               if (e.target.files && e.target.files[0]) {
+//                 setFile(e.target.files[0]);
+//               }
+//             }}
+//             className="block w-full text-sm text-gray-600 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-medium file:bg-indigo-100 file:text-indigo-700 hover:file:bg-indigo-200 cursor-pointer"
+//           />
+//         </div>
+
+//         {file && (
+//           <div className="space-y-2">
+//             <p className="font-medium text-gray-700">Photo Preview:</p>
+//             <img
+//               src={URL.createObjectURL(file)}
+//               alt="Preview"
+//               className="w-full max-h-80 object-contain border rounded-xl shadow-md"
+//             />
+//           </div>
+//         )}
+
+//         <div className="flex items-center gap-2">
+//           <input
+//             type="checkbox"
+//             checked={isAnonymous}
+//             onChange={(e) => setIsAnonymous(e.target.checked)}
+//             className="h-5 w-5 accent-indigo-500 rounded focus:ring-2 focus:ring-indigo-400"
+//           />
+//           <label className="text-gray-700">Post anonymously</label>
+//         </div>
+
+//         <div className="pt-4">
+//           <button
+//             onClick={() => alert("Submitted! (You can replace this with actual logic)")}
+//             className="w-full bg-indigo-500 hover:bg-indigo-600 text-white text-lg font-semibold py-3 rounded-xl transition-all duration-200 shadow-md hover:shadow-lg"
+//           >
+//             ✨ Submit Entry
+//           </button>
+//         </div>
+//       </div>
+//     </main>
+//   );
+// }
