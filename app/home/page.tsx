@@ -8,7 +8,7 @@ export default function HomePage() {
       <header className="mb-12 max-w-3xl">
         <h1 className="text-4xl font-semibold tracking-tight">Welcome to Third Eye</h1>
         <p className="mt-4 text-lg leading-relaxed text-gray-600">
-          A mindful space to reflect, connect, and heal. Post journal entries, receive thoughtful replies from friends with curated book quotes, and explore excerpt-based support tailored to what you're feeling. You can also share moments of wellness with those who matter most.
+          A mindful space to reflect, connect, and heal. Post journal entries, receive thoughtful replies from friends with curated book quotes, and explore book suggestions and uplifting quotes from intellectual works tailored to what you're feeling(Therapize Mode). You can also share moments of wellness with those who matter most.
         </p>
       </header>
 
