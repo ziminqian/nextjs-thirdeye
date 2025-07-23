@@ -4,36 +4,40 @@ import Link from "next/link";
 
 export default function HomePage() {
   return (
-    <main className="min-h-screen bg-gray-50 text-gray-800 p-6">
-      <h1 className="text-3xl font-bold mb-4">Welcome to Quotely 🌱</h1>
-      <p className="mb-6 text-lg">A safe space to reflect, share quotes, and support each other through literature and wellness.</p>
+    <main className="min-h-screen bg-white text-gray-900 px-6 py-10 md:px-16">
+      <header className="mb-12 max-w-3xl">
+        <h1 className="text-4xl font-semibold tracking-tight">Welcome to Third Eye</h1>
+        <p className="mt-4 text-lg leading-relaxed text-gray-600">
+          A mindful space to reflect, connect, and heal. Post journal entries, receive thoughtful replies from friends with curated book quotes, and explore excerpt-based support tailored to what you're feeling. You can also share moments of wellness with those who matter most.
+        </p>
+      </header>
 
-      <div className="grid gap-4 md:grid-cols-2">
-        <Link href="/post" className="block p-6 bg-white rounded shadow hover:shadow-lg transition">
-          <h2 className="text-xl font-semibold">📝 Post a Journal Entry</h2>
-          <p className="text-sm text-gray-600">Share how you're feeling—anonymously or not.</p>
+      <section className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <Link href="/post" className="block p-6 border border-gray-200 rounded-xl shadow-sm hover:shadow-md transition">
+          <h2 className="text-xl font-medium">Write a Journal Entry</h2>
+          <p className="mt-2 text-sm text-gray-500">Reflect on your thoughts—publicly or privately.</p>
         </Link>
 
-        <Link href="/explore" className="block p-6 bg-white rounded shadow hover:shadow-lg transition">
-          <h2 className="text-xl font-semibold">📚 Explore Quotes</h2>
-          <p className="text-sm text-gray-600">Discover and send uplifting quotes to your friends.</p>
+        <Link href="/explore" className="block p-6 border border-gray-200 rounded-xl shadow-sm hover:shadow-md transition">
+          <h2 className="text-xl font-medium">Explore Book Quotes</h2>
+          <p className="mt-2 text-sm text-gray-500">Send excerpts that resonate with your friends’ entries.</p>
         </Link>
 
-        <Link href="/inbox" className="block p-6 bg-white rounded shadow hover:shadow-lg transition">
-          <h2 className="text-xl font-semibold">💌 View Your Inbox</h2>
-          <p className="text-sm text-gray-600">See what your friends have sent you.</p>
+        <Link href="/inbox" className="block p-6 border border-gray-200 rounded-xl shadow-sm hover:shadow-md transition">
+          <h2 className="text-xl font-medium">Your Reflections Inbox</h2>
+          <p className="mt-2 text-sm text-gray-500">See responses and support from your community.</p>
         </Link>
 
-        <Link href="/therapist" className="block p-6 bg-white rounded shadow hover:shadow-lg transition">
-          <h2 className="text-xl font-semibold">🧠 Therapist Mode</h2>
-          <p className="text-sm text-gray-600">Get quote-based support for what you're going through.</p>
+        <Link href="/therapistmode" className="block p-6 border border-gray-200 rounded-xl shadow-sm hover:shadow-md transition">
+          <h2 className="text-xl font-medium">Therapize Mode</h2>
+          <p className="mt-2 text-sm text-gray-500">Receive personalized literary guidance for your challenges.</p>
         </Link>
 
-        <Link href="/wellness" className="block p-6 bg-white rounded shadow hover:shadow-lg transition">
-          <h2 className="text-xl font-semibold">📷 Share Wellness Check-In</h2>
-          <p className="text-sm text-gray-600">Post what you did for self-care today.</p>
+        <Link href="/wellness" className="block p-6 border border-gray-200 rounded-xl shadow-sm hover:shadow-md transition">
+          <h2 className="text-xl font-medium">Share a Wellness Moment</h2>
+          <p className="mt-2 text-sm text-gray-500">Capture and share how you're caring for yourself today.</p>
         </Link>
-      </div>
+      </section>
     </main>
   );
 }
