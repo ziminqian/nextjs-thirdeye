@@ -1,13 +1,13 @@
 import React from "react";
 import Link from "next/link";
 
-export default function HomePage() {
+export default function Page() {
   return (
     <main className="min-h-screen bg-white text-gray-900 px-6 py-10 md:px-16">
       <header className="mb-12 max-w-3xl">
         <h1 className="text-4xl font-semibold tracking-tight">Welcome to Third Eye</h1>
         <p className="mt-4 text-lg leading-relaxed text-gray-600">
-          A mindful space to reflect, connect, and heal. Post journal entries, receive thoughtful replies from friends with curated book quotes, and explore book suggestions and uplifting quotes from intellectual works tailored to what you're feeling(Therapize Mode). You can also share moments of wellness with those who matter most.
+          A mindful space to reflect, connect, and heal. Post journal entries, receive thoughtful replies from friends with curated book quotes, and explore book suggestions and uplifting quotes from intellectual works tailored to what you're feeling (Therapize Mode). You can also share moments of wellness with those who matter most.
         </p>
       </header>
 
