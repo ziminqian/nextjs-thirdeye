@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 // 📁 app/layout.tsx
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
@@ -16,7 +15,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Third Eye",
-  description: "A wellness platform for reflection and connection",
+  description: "A wellness platform to reflect, share, and connect.",
 };
 
 export default function RootLayout({
@@ -26,7 +25,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
-      <body className="antialiased bg-white text-gray-900">{children}</body>
+      <body className="antialiased bg-white text-gray-900">
+        {children}
+      </body>
     </html>
   );
 }
